@@ -60,37 +60,76 @@ D7 = X Y Z
 
 
 ### PROGRAM 
-/*
+
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: vidhyasri.k
+RegisterNumber:  212222230170
+### 1.FOR ENCODER:
+```
+module enc(a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
 
+input y0,y1,y2,y3,y4,y5,y6,y7;
 
+output a0,a1,a2;
 
+or(a0,y7,y5,y3,y1);
 
+or(a1,y7,y6,y3,y2);
 
+or(a2,y7,y6,y5,y4);
 
+endmodule
+```
+### 2.FOR DECODER:
+```
+module dec (a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+
+input a0,a1,a2;
+
+output y0,y1,y2,y3,y4,y5,y6,y7;
+
+wire a0bar,a1bar,a2bar;
+
+not(a0bar,a0);
+
+not(a1bar,a1);
+
+not(a2bar,a2);
+
+and(y0,a0bar,a1bar,a2bar);
+
+and(y1,a0,a1bar,a2bar);
+
+and(y2,a0bar,a1,a2bar);
+
+and(y3,a0,a1,a2bar);
+
+and(y4,a0bar,a1bar,a2);
+
+and(y5,a0,a1bar,a2);
+
+and(y6,a0bar,a1,a2);
+
+and(y7,a0,a1,a2);
+
+endmodule
+```
 ### RTL LOGIC  
-
-
-
-
-
-
-
-
+### FOR ENCODER:
+![image](https://github.com/vidhyasrikachapalayam/Experiment-08-Encoders-and-decoders-/assets/119477817/01e63af5-8dbe-479f-9a69-e9983ec18412)
+### FOR DECODER:
+![image](https://github.com/vidhyasrikachapalayam/Experiment-08-Encoders-and-decoders-/assets/119477817/9e7966cb-498f-45bc-9440-195993d238a2)
 ### TIMING DIGRAMS  
-
-
-
-
+### FOR ENCODER:
+![image](https://github.com/vidhyasrikachapalayam/Experiment-08-Encoders-and-decoders-/assets/119477817/ab2d4e2c-1821-45d9-aae2-6968e3d4ee2d)
+### FOR DECODER:
+![image](https://github.com/vidhyasrikachapalayam/Experiment-08-Encoders-and-decoders-/assets/119477817/1c47ccc4-4cdf-4f4b-8011-922572a46056)
 
 ### TRUTH TABLE 
-
-
-
-
-
+### FOR ENCODER:
+![image](https://github.com/vidhyasrikachapalayam/Experiment-08-Encoders-and-decoders-/assets/119477817/10c68c1b-5788-430a-8222-bf6c4a09c921)
+### FOR DECODER:
+![image](https://github.com/vidhyasrikachapalayam/Experiment-08-Encoders-and-decoders-/assets/119477817/113db7d1-fcf5-4c64-8904-e94bab272d14)
 
 ### RESULTS 
+Thus the program to design encoder and decoder is successfully completed.
